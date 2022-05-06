@@ -1,0 +1,23 @@
+{
+    "contact":{
+        "firstName": "Alex",
+        "lastName": "Tew",
+        "email": "alex@tew.com",
+        "favoriteColor": "Blonde",
+        "birthday": "12/10/22"
+    },
+    "contact2":{
+        "firstName": "Sebastian",
+        "lastName": "Saenz",
+        "email": "sebastian@saenz.com",
+        "favoriteColor": "Black",
+        "birthday": "10/10/22"
+    },
+    "contact3":{
+        "firstName": "Dallen",
+        "lastName": "Calder",
+        "email": "dallen@calder.com",
+        "favoriteColor": "Golden",
+        "birthday": "12/04/22"
+    }
+}
