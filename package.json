@@ -1,0 +1,29 @@
+{
+  "name": "cse341-node",
+  "version": "1.0.0",
+  "description": "Project Web Backend II by Antonio David Tejada Villalon",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antonio-David-Tejada-Villalon/cse341-node.git"
+  },
+  "keywords": [
+    "strings"
+  ],
+  "author": "Antonio David Tejada Villalon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Antonio-David-Tejada-Villalon/cse341-node/issues"
+  },
+  "homepage": "https://github.com/Antonio-David-Tejada-Villalon/cse341-node#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
