@@ -1,18 +1,16 @@
-const routes = require('express').Router();
+const express = require('express');
+const router = express.Router();
+const contact = require('../controllers/contacts')
 
-routes.get('/', (req, res) => {
+router.get('/contacts', contact.getAll);
+router.get('/contacts/:id', contact.getSingle);
+
+router.get('/', (req, res) => {
     res.send('Antonio David Tejada Villalon');
 })
 
-routes.get('/test', (req, res) => {
+router.get('/test', (req, res) => {
     res.send('This link is working');
 })
-
-module.exports = routes;
-
-const express = require('express');
-const router = express.Router();
-
-router.use('/contacts', require('./contacts'));
 
 module.exports = router;
