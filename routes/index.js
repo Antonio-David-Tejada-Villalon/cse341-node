@@ -4,6 +4,7 @@ const contact = require('../controllers/contacts')
 
 router.get('/contacts', contact.getAll);
 router.get('/contacts/:id', contact.getSingle);
+router.use('/contacts', require('../routes/contacts'));
 
 router.get('/', (req, res) => {
     res.send('Antonio David Tejada Villalon');

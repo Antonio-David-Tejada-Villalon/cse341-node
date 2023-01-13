@@ -22,4 +22,57 @@ const getSingle = async (req, res, next) => {
     });
 };
 
-module.exports = { getAll,  getSingle };
+const createAContact = async (req, res) => {
+    const contact = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        favoriteColor: req.body.favoriteColor,
+        birthday: req.body.birthday
+    };
+    console.log(contact);
+    const response = await mongodb.getDb().db('contact')
+    .collection('contacts').insertOne(contact);
+    if (response.acknowledged) {
+        res.status(201).json(response);
+    } else {
+        res.status(500).json(response.error || 'Verify the information you are adding for creating a contact, maybe is wrong');
+    }
+};
+
+const updateAContact = async (req, res) => {
+    const userId = ObjectId(req.params.id);
+    //this is just for udpdating a specific field.
+    const contact = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        favoriteColor: req.body.favoriteColor,
+        birthday: req.body.birthday
+    };
+    const response = await mongodb
+    .getDb()
+    .db('contact')
+    .collection('contacts')
+    .replaceOne({_id: userId}, contact);
+    console.log(response);
+    if (response.modifiedCount > 0) {
+        res.status(204).send();
+    } else {
+        res.status(500).json(response.error || 'Verify the information you are changing for updating a contact, maybe is wrong');
+    }
+};
+
+const deleteAContact = async (req, res) => {
+    const userId = new ObjectId(req.params.id);
+    const response = await mongodb.getDb().db('contact')
+    .collection('contacts').remove({_id: userId}, true);
+    console.log(response);
+    if (response.deletedCount > 0) {
+        res.status(204).send();
+    } else {
+        res.status(500).json(response.error || 'Verify the information you want to delete in a contact, maybe is wrong');
+    }
+};
+
+module.exports = { getAll,  getSingle, createAContact, updateAContact, deleteAContact };
