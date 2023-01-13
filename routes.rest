@@ -37,3 +37,32 @@ Content-Type: application/json
 
 ### DELETE A Contact
 DELETE http://localhost:3000/contacts/63c0c69c0da0bec51bdfc699 HTTP/1.1
+
+
+###DEPLOY EN RENDER
+### POST a Contact
+POST https://cse341-node-ndyo.onrender.com/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName":"Allison",
+    "lastName":"Kandarian",
+    "email":"allisonkandarian@email.com",
+    "favoriteColor":"Pink",
+    "birthday":"02/29/1999"
+}
+
+### PUT a Contact
+PUT https://cse341-node-ndyo.onrender.com/contacts/63bb70356dea3101a1a3f676 HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "Gabe",
+  "lastName": "Gardiner",
+  "email": "newgabegardiner@gmail.com",
+  "favoriteColor": "green",
+  "birthday": "09/22/1987"
+}
+
+###DELETE a Contact
+DELETE https://cse341-node-ndyo.onrender.com/contacts/63bb70356dea3101a1a3f676 HTTP/1.1
