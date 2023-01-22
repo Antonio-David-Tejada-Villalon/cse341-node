@@ -1,0 +1,17 @@
+GET http://localhost:3000/books
+
+###
+GET http://localhost:3000/books/63cb36d36e47a1e91111b8ba
+
+###
+POST http://localhost:3000/books HTTP/1.1
+Content-Type: application/json
+
+{
+    "title":"Richard III",
+    "author":"William Shakespeare",
+    "edition":"4th edition",
+    "year":"1597",
+    "country":"Old England",
+    "price": "$ 5.50"
+}
